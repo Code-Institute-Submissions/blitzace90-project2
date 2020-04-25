@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Pokemon Guide</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="jquery.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link href="stylesheet.css" rel="stylesheet"> 
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="container-fluid">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio1" value="normal" checked>
+                    <label class="form-check-label" for="inlineRadio1">Normal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio2" value="fighting">
+                    <label class="form-check-label" for="inlineRadio2">Fighting</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio3" value="flying">
+                    <label class="form-check-label" for="inlineRadio3">Flying</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio4" value="poison">
+                    <label class="form-check-label" for="inlineRadio4">Poison</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio5" value="ground">
+                    <label class="form-check-label" for="inlineRadio5">Ground</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio6" value="rock">
+                    <label class="form-check-label" for="inlineRadio6">Rock</label>
+                </div>
+
+                </br>
+
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radio" id="inlineRadio7" value="bug">
+                <label class="form-check-label" for="inlineRadio7">Bug</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio8" value="ghost">
+                    <label class="form-check-label" for="inlineRadio8">Ghost</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio9" value="steel">
+                    <label class="form-check-label" for="inlineRadio9">Steel</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio10" value="fire">
+                    <label class="form-check-label" for="inlineRadio10">Fire</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio11" value="water">
+                    <label class="form-check-label" for="inlineRadio11">Water</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio12" value="grass">
+                    <label class="form-check-label" for="inlineRadio12">Grass</label>
+                </div>
+
+                </br>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio13" value="electric">
+                    <label class="form-check-label" for="inlineRadio13">Electric</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio14" value="psychic">
+                    <label class="form-check-label" for="inlineRadio14">Psychic</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio15" value="ice">
+                    <label class="form-check-label" for="inlineRadio15">Ice</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio16" value="dragon">
+                    <label class="form-check-label" for="inlineRadio16">Dragon</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio17" value="dark">
+                    <label class="form-check-label" for="inlineRadio17">Dark</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="radio" id="inlineRadio18" value="fairy">
+                    <label class="form-check-label" for="inlineRadio18">Fairy</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-fluid">
+                <button id="search-btn" class="ui red button">Search</button>
+            </div>
+        </div>
+
+
+        </div>
+        <div id="delete-container">
+            <button id="delete-btn" class="ui red button">Delete</button>
+        </div>
+
+        <h1>Search result</h1>
+        <div class="container" id="poke-container">
+            <!--pokemon results-->
+        </div>
+
+
+        
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
