@@ -1,3 +1,174 @@
-/* make types by their color. fire= red, water=blue */
 /* https://www.w3schools.com/cssref/pr_text_text-transform.asp 
-use css to change pokemon first letter to caps*/
+
+/*Types*/
+.bg{
+    background-image: url(pokemonimage/Backgroundimage.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: alpha(opacity=20);
+}
+
+.logo{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.types{
+    background-color: rgb(254, 255, 218);
+    padding: 20px;
+}
+
+.type{
+    border: solid;
+}
+
+.poketype {
+    font-size: 15px; 
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    width: 6em;
+    text-align: center;
+    display: inline-block;
+    border: .1em solid transparent;
+    padding: .1em .2em .2em;
+    margin: .1em .015em;
+    border-radius: .4em;
+    text-transform: uppercase;
+    font-size:.8em; 
+    color: white;
+    text-shadow: 0em 0em .2em black; 
+}
+.normal{
+    background-color: #a8a878; border-top-color: lighten(#a8a878,15%); border-bottom-color: darken(#a8a878,15%);
+}
+
+.fighting {
+    background-color: #c03028; border-top-color: lighten(#c03028,15%); border-bottom-color: darken(#c03028,15%);
+}
+
+.flying {
+    background-color: #a890f0; border-top-color: lighten(#a890f0,15%); border-bottom-color: darken(#a890f0,15%);
+}
+
+.poison {
+    background-color: #a040a0; border-top-color: lighten(#a040a0,15%); border-bottom-color: darken(#a040a0,15%);
+}
+
+.ground {
+    background-color: #e0c068; border-top-color: lighten(#e0c068,15%); border-bottom-color: darken(#e0c068,15%);
+}
+
+.rock {
+    background-color: #b8a038; border-top-color: lighten(#b8a038,15%); border-bottom-color: darken(#b8a038,15%); 
+}
+
+.bug {
+    background-color: #a8b820; border-top-color: lighten(#a8b820,15%); border-bottom-color: darken(#a8b820,15%); 
+}
+
+.ghost{
+    background-color: #705898; border-top-color: lighten(#705898,15%); border-bottom-color: darken(#705898,15%);
+}
+
+.steel {
+    background-color: #b8b8d0; border-top-color: lighten(#b8b8d0,15%); border-bottom-color: darken(#b8b8d0,15%); 
+}
+
+.fire{
+    background-color: #ff6a06; border-top-color: lighten(#ff6a06,15%); border-bottom-color: darken(#ff6a06,15%);
+}
+
+.water{
+    background-color: #6890f0; border-top-color: lighten(#6890f0,15%); border-bottom-color: darken(#6890f0,15%);
+}
+
+.grass{
+    background-color: #78c850; border-top-color: lighten(#78c850,15%); border-bottom-color: darken(#78c850,15%);
+}
+
+.electric{
+    background-color: #f8d030; border-top-color: lighten(#f8d030,15%); border-bottom-color: darken(#f8d030,15%);
+}
+
+.psychic{
+    background-color: #f85888; border-top-color: lighten(#f85888,15%); border-bottom-color: darken(#f85888,15%);
+}
+
+.ice{
+    background-color: #98d8d8; border-top-color: lighten(#98d8d8,15%); border-bottom-color: darken(#98d8d8,15%);
+}
+
+.dragon{
+    background-color: #7038f8; border-top-color: lighten(#7038f8,15%); border-bottom-color: darken(#7038f8,15%);
+}
+
+.dark{
+    background-color: #705848; border-top-color: lighten(#705848,15%); border-bottom-color: darken(#705848,15%);
+}
+
+.fairy{
+    background-color: #ffb7fa; border-top-color: lighten(#ffb7fa,15%); border-bottom-color: darken(#ffb7fa,15%);
+}
+
+/*Regions*/
+
+.regions{
+    background-color: cyan;
+    padding: 20px;
+}
+
+.pokeregion{
+    font-size: 15px; 
+    font-family: 'Trebuchet MS';
+    font-weight: bold;
+    width: 6em;
+    text-align: center;
+    display: inline-block;
+    border: .1em solid transparent;
+    padding: .1em .2em .2em;
+    margin: .1em .015em;
+    border-radius: .4em;
+    text-transform: uppercase;
+    font-size:.8em; 
+    color: rgb(0, 0, 0);
+}
+
+.pokeregion {
+    background-color: #ffffff; border-top-color: lighten(#ffffff,15%); border-bottom-color: darken(#ffffff,15%);
+}
+
+/*Cards*/
+
+.card{
+    border: solid;
+    width: auto;
+    height: auto;
+    background-color: rgb(253, 229, 200);
+    padding: 15px;
+    z-index: 1;
+    color: black;
+}
+
+.card:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5);
+    transition-delay: 0.05s;
+    z-index: 2;
+}
+
+#poke-container {
+    justify-content: center;
+}
+
+.typebtn {
+    padding: 10px;
+}
+
+.regionbtn {
+    padding: 10px;
+}
+
