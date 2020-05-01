@@ -150,6 +150,7 @@
     padding: 15px;
     z-index: 1;
     color: black;
+    object-fit: contain;
 }
 
 .card:hover {
