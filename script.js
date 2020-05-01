@@ -1,61 +1,57 @@
 $(document).ready(function(){
+
+  for (let j=1;j<723;j++){
+    $('#poke-container').append(`<div id="pokemon${j}" class="pokeCard"></div>`)
+  }
+
   //Uncheck region if type selected
   $('.type').on('click',function(){
     $(".region").each(function(){
       this.checked = false;
-    });                
+    });  
+    $('#inputPokemon').val("")
   })
   //Uncheck type if region selected
   $('.region').on('click',function(){
     $(".type").each(function(){
       this.checked = false;
-    });                
+    });  
+    $('#inputPokemon').val("")             
+  })
+  //Uncheck radio buttons if textbox is clicked
+  $('#inputPokemon').on('click',function(){
+    $(".radio-btn").each(function(){
+      this.checked = false;
+    })
   })
 
   //Find Button clicked
-  $("#find-btn").click(function(){
-    $('#poke-container').text(``)
+  $("#search-btn").click(function(){
     var radioValue=''
-      //If type radio is selected, send 3 arguments (url,search type (type) and radio value to function)
+    var name = $('#inputPokemon').val()
+      //If type radio is selected, send 2 arguments (search type (type) and radio value to function)
       if($("input[name='radioType']").is(':checked')){
         radioValue = $("input[name='radioType']:checked").val();
-        for (let id=1;id<803;id++){
-        var pokeapiUrl = `https://pokeapi.co/api/v2/pokemon/${id}`
-        getPokemon(pokeapiUrl,'type',radioValue)
-        }
+        getPokemon('type',radioValue)
       }
-      //If region radio is selected, send 3 arguments (url,search type (region) and radio value to function)
+      //If region radio is selected, send 2 arguments (search type (region) and radio value to function)
       else if($("input[name='radioRegion']").is(':checked')){
         radioValue = $("input[name='radioRegion']:checked").val();
-        for (let id=1;id<803;id++){
-        var pokeapiUrl = `https://pokeapi.co/api/v2/pokemon/${id}`
-        getPokemon(pokeapiUrl,'region',radioValue)
-        }
+        getPokemon('region',radioValue)
       }
+      //If textbox is input, send 2 arguments to function
+      else if (name !== "")   
+        var name = name.toLowerCase()
+        getPokemon('name',name)
   });
 
-
-  //Search Name Button
-  $("#search").click(function(){
-    $('#poke-container').text(``)
-      var name = $("#inputPokemon").val()
-      var name = name.toLowerCase()
-      var url = "https://pokeapi.co/api/v2/pokemon/" + name
-      for (let id=1;id<803;id++){
-        var pokeapiUrl = `https://pokeapi.co/api/v2/pokemon/${id}`
-        getPokemon(pokeapiUrl,'name',name)
-      }
-    });
-  });
-
-
-  //All in one function. url is to fetch pokemon data, search type is to run each appending function according to what needs to be compared, parameter is the variable to compare e.g. 'kanto' for region comparison, 'normal' for type comparison, 'name' for name comparison
-  /*async function getPokemon(pokeapiUrl,searchType,parameter){
-    let response = await fetch(pokeapiUrl);
-    let data = await response.json()*/
-
-  function getPokemon(pokeapiUrl,searchType,parameter){
-  fetch(pokeapiUrl)
+  function getPokemon(searchType,parameter){
+    $('.pokeCard').each(function(){
+      $(this).empty()
+    })
+    for (let j=1;j<723;j++){
+      let url = `https://pokeapi.co/api/v2/pokemon/${j}`;
+      fetch(url)
       .then( res => {
         return res.json();
       })
@@ -70,78 +66,89 @@ $(document).ready(function(){
         if(searchType=='type'){
           for (let t of pokemon['type']){
             if (t==parameter){
-              append()
+              pushToDiv(j)
             };
           };
         }
 
-        //If region is selected, append id no. according to region
+            //If region is selected, append id no. according to region
         else if(searchType=='region'){
 
-          //Switch function, depending on region selected, append only for certain ID no.
+              //Switch function, depending on region selected, append only for certain ID no.
           switch (parameter){
             case 'kanto':
               if (0<pokemon['id'] && pokemon['id']<152){
-                append()
+                pushToDiv(j)
               }
               break;
               case "johto":
               if (151<pokemon['id'] && pokemon['id']<252){
-                append()
+                pushToDiv(j)
               }
               break;
               case "hoenn":
               if (251<pokemon['id'] && pokemon['id']<387){
-                append()
+                pushToDiv(j)
               }
               break;
               case "sinnoh":
               if (386<pokemon['id'] && pokemon['id']<494){
-                append()
+                pushToDiv(j)
               }
               break;
               case "unova":
               if (493<pokemon['id'] && pokemon['id']<650){
-                append()
+                pushToDiv(j)
               }
               break;
               case "kalos":
               if (649<pokemon['id'] && pokemon['id']<722){
-                append()
+                pushToDiv(j)
               }
               break;
-          }
+            } 
 
-        //If search button is pressed, means search by name
-        }else if(searchType=='name'){
-          if (pokemon['name']==parameter || pokemon['id']==parameter){
-            append()
-          } 
-        };
-      })
+            //If search button is pressed, means search by name
+          }else if(searchType=='name'){
+            if (pokemon['name']==parameter || pokemon['id']==parameter){
+              pushToDiv(j)
+            } 
+          };
+        })
+      }
 
       //Function called 'append' to add to HTML Container
-      function append(){
-            //$('#poke-container').append(`<a href="index2.html" id="${pokemon['name']}" class="retPokemon">${pokemon['name']}</a>`)
-            //$('#poke-container').append(`</br>Type: ${pokemon['type']}`)
-            //$('#poke-container').append(`</br><img src="${pokemon['image']}" /></br>`)
-            $('#poke-container').append(
-              `<div class='card' id="${pokemon['name']}">
-              ${pokemon['name']}
-              </br>
-              <img src="${pokemon['image']}" />
-              </div>`
-            )
-      }
+      function pushToDiv(j){
+        pokemon['name'] = pokemon['name'].charAt(0).toUpperCase() + pokemon['name'].slice(1);
+        $(`#pokemon${j}`).html(
+          `<a href = "index2.html">
+          <div class='card' id="${pokemon['name']}">
+          ${pokemon['id']}. ${pokemon['name']}
+          </br>
+          <img src="${pokemon['image']}"/>
+          </div>
+          </a>`
+        )
+      } 
   }
 
   //clear button
   $("#clear-btn").click(function(){
-    $('#poke-container').html("");
+    $('.pokeCard').html("");
+    $('#inputPokemon').val("")
     $('.radio-btn').prop("checked",false)
   });
 
-  
+//Caps first letter of pokemon name
+//pokemon['name'] = pokemon['name'].charAt(0).toUpperCase() + str.slice(1);
 
 
+//html1 - id pokemon html2 - id pokemondetails
 
+  $('.pokeCard').each(function(){
+    $(this).on('click', function (){
+      localStorage.setItem('id',`${this.id}`)
+    })
+  })
+
+})
