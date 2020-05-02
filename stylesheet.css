@@ -1,13 +1,11 @@
-/* https://www.w3schools.com/cssref/pr_text_text-transform.asp 
-
 /*Types*/
 .bg{
     background-image: url(pokemonimage/pikachubgimage.jpg); 
     height: 100%;
-    background-position: center;
+    width: 100%;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: alpha(opacity=20);
 }
 
 .logo{
@@ -144,10 +142,10 @@
 
 .card{
     border: solid;
-    width: auto;
-    height: auto;
+    width: 160px;
+    height: 160px;
     background-color: rgb(253, 229, 200);
-    padding: 15px;
+    padding: 10px;
     z-index: 1;
     color: black;
     object-fit: contain;
@@ -171,5 +169,32 @@
 
 .regionbtn {
     padding: 10px;
+}
+
+/*HTML2*/
+
+#indivpoke {
+    padding: 30px;
+    color: black;
+}
+
+.pokeimage2 {
+    object-fit: contain;
+    width: 180px;
+    padding: 5px;
+}
+
+.bg2 {
+    background-image: url(pokemonimage/pokeballimage.jpg);
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pokebox {
+    background-color: cyan;
 }
 
