@@ -1,3 +1,5 @@
+google.charts.load('current', {'packages':['bar']});
+
 $(document).ready(function(){
     let id=localStorage.getItem('id').slice(7)
     //console.log(id)
@@ -12,16 +14,93 @@ $(document).ready(function(){
       pokemon['name'] = data.name;
       pokemon['id'] = data.id;
       pokemon['image'] = data.sprites['front_default'];
+      pokemon['image2'] = data.sprites['back_default'];
+      pokemon['image3'] = data.sprites['front_shiny'];
+      pokemon['image4'] = data.sprites['back_shiny'];
       pokemon['type'] = data.types.map((type) => type.type.name);
+      pokemon['attack'] = data.stats[4].base_stat;
+      pokemon['defense'] = data.stats[3].base_stat;
+      pokemon['spattack'] = data.stats[2].base_stat;
+      pokemon['spdefense'] = data.stats[1].base_stat;
+      pokemon['speed'] = data.stats[0].base_stat;
+      pokemon['hp'] = data.stats[5].base_stat;
+      pokemon['abilities'] = data.abilities.map((ability) => ability.ability.name);
+
+      pokemon['name'] = pokemon['name'].charAt(0).toUpperCase() + pokemon['name'].slice(1);
   
       $(`#poke-container-2`).html(
-      `<a href = "index2.html">
-      <div class='card' id="${pokemon['name']}">
-      ${pokemon['name']}
-      </br>
-      <img src="${pokemon['image']}" />
-      </div>
-      </a>`
-      )
-    })
-  })
+      `<div class='container-fluid'>
+        <div class='container-fluid text-center' id='indivpoke'><h1>${pokemon['name']}</h1></div>
+        
+        <div class='text-center'>
+          Type: ${pokemon['type']}
+        </div>
+
+        <div class='container text-center row'>
+          
+          <div class='col-lg-6'><img class='pokeimage2' src="${pokemon['image']}"/><img class='pokeimage2' src="${pokemon['image2']}"/>
+          <br>Default
+          </div>
+          
+          <div class='col-lg-6'><img class='pokeimage2' src="${pokemon['image3']}"/><img class='pokeimage2' src="${pokemon['image4']}"/>
+          <br>Shiny
+          </div>
+          
+        </div>
+
+        <div class='pokedetails'>
+
+          <div class='stats text-center'>
+            <h5>Base stats: </h5>
+            Attack: ${pokemon['attack']} <br>
+            Defense: ${pokemon['defense']} <br>
+            Special Att: ${pokemon['spattack']} <br>
+            Special Def: ${pokemon['spdefense']} <br>
+            Speed: ${pokemon['speed']} <br>
+            HP: ${pokemon['hp']} 
+          </div>
+
+          <br>
+
+          <div class='abilities text-center'>
+            <h5>Abilities: <br></h5>
+            ${pokemon['abilities']} 
+          </div>
+          <br>
+          <div class='text-center' id='pokechart'>
+          </div>
+
+          <br>
+
+        </div>
+
+      </div>`
+      );
+    }).then(data =>{
+
+      let dataArray=[
+      ['Base Stats','Value'],
+      ['Attack', `${pokemon['attack']}`],
+      ['Defense', `${pokemon['defense']}`],
+      ['Sp Att', `${pokemon['spattack']}`],
+      ['Sp Def', `${pokemon['spdefense']}`],
+      ['Speed', `${pokemon['speed']}`],
+      ['HP', `${pokemon['hp']}`]
+      ]
+
+      var chartData = new google.visualization.arrayToDataTable(dataArray);
+      
+      var options = {
+      title:'Pokemon Stats',
+      backgroundColor:{fill:'none'},
+      chartArea:{left:50,top:50,width:'100%',height:'100%'},
+      };
+      var pokestats = new google.charts.Bar(document.getElementById('pokechart'));
+
+      google.charts.setOnLoadCallback(pokestats.draw(chartData, options));
+    
+  });
+
+});
+
+
