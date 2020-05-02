@@ -1,15 +1,15 @@
-google.charts.load('current', {'packages':['bar']});
+google.charts.load('current', { 'packages': ['bar'] });
 
-$(document).ready(function(){
-    let id=localStorage.getItem('id').slice(7)
-    //console.log(id)
-  
-    let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    fetch(url)
-    .then( res => {
+$(document).ready(function () {
+  let id = localStorage.getItem('id').slice(7)
+  //console.log(id)
+
+  let url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+  fetch(url)
+    .then(res => {
       return res.json();
     })
-    .then( data =>{
+    .then(data => {
       pokemon = {};
       pokemon['name'] = data.name;
       pokemon['id'] = data.id;
@@ -27,9 +27,9 @@ $(document).ready(function(){
       pokemon['abilities'] = data.abilities.map((ability) => ability.ability.name);
 
       pokemon['name'] = pokemon['name'].charAt(0).toUpperCase() + pokemon['name'].slice(1);
-  
+
       $(`#poke-container-2`).html(
-      `<div class='container-fluid'>
+        `<div class='container-fluid'>
         <div class='container-fluid text-center' id='indivpoke'><h1>${pokemon['name']}</h1></div>
         
         <div class='text-center'>
@@ -76,31 +76,33 @@ $(document).ready(function(){
 
       </div>`
       );
-    }).then(data =>{
+    }).then(data => {
 
-      let dataArray=[
-      ['Base Stats','Value'],
-      ['Attack', `${pokemon['attack']}`],
-      ['Defense', `${pokemon['defense']}`],
-      ['Sp Att', `${pokemon['spattack']}`],
-      ['Sp Def', `${pokemon['spdefense']}`],
-      ['Speed', `${pokemon['speed']}`],
-      ['HP', `${pokemon['hp']}`]
+      let dataArray = [
+        ['Base Stats', 'Value'],
+        ['Attack', parseFloat(`${pokemon['attack']}`)],
+        ['Defense', parseFloat(`${pokemon['defense']}`)],
+        ['Sp Att', parseFloat(`${pokemon['spattack']}`)],
+        ['Sp Def', parseFloat(`${pokemon['spdefense']}`)],
+        ['Speed', parseFloat(`${pokemon['speed']}`)],
+        ['HP', parseFloat(`${pokemon['hp']}`)]
       ]
-
-      var chartData = new google.visualization.arrayToDataTable(dataArray);
       
-      var options = {
-      title:'Pokemon Stats',
-      backgroundColor:{fill:'none'},
-      chartArea:{left:50,top:50,width:'100%',height:'100%'},
-      };
-      var pokestats = new google.charts.Bar(document.getElementById('pokechart'));
+      google.charts.setOnLoadCallback(function () { drawChart(dataArray) });
 
-      google.charts.setOnLoadCallback(pokestats.draw(chartData, options));
-    
-  });
+    });
+
+  function drawChart(dataArray) {
+    var chartData = new google.visualization.arrayToDataTable(dataArray);
+    console.log(dataArray);
+
+    var options = {
+      title: 'Pokemon Stats',
+      backgroundColor: { fill: 'none' },
+      chartArea: { left: 50, top: 50, width: '100%', height: '100%' },
+    };
+    var pokestats = new google.charts.Bar(document.getElementById('pokechart'));
+    pokestats.draw(chartData, options);
+  }
 
 });
-
-
