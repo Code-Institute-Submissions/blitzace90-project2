@@ -31,24 +31,36 @@ $(document).ready(function () {
       $(`#poke-container-2`).html(
         `<div class='container-fluid'>
         <div class='container-fluid text-center' id='indivpoke'><h1>${pokemon['name']}</h1></div>
-        
-        <div class='text-center'>
-          Type: ${pokemon['type']}
-        </div>
 
-        <div class='container text-center row'>
+        <div class='container-fluid text-center row'>
           
-          <div class='col-lg-6'><img class='pokeimage2' src="${pokemon['image']}"/><img class='pokeimage2' src="${pokemon['image2']}"/>
+          <div class='col-lg-5'><img class='pokeimage2' src="${pokemon['image']}" alt='default front image'/><img class='pokeimage2' src="${pokemon['image2']}" alt='default back image'/>
           <br>Default
           </div>
           
-          <div class='col-lg-6'><img class='pokeimage2' src="${pokemon['image3']}"/><img class='pokeimage2' src="${pokemon['image4']}"/>
+          <div class='col-lg-2'></div>
+
+          <div class='col-lg-5'><img class='pokeimage2' src="${pokemon['image3']}" alt='shiny front image'/><img class='pokeimage2' src="${pokemon['image4']}" alt='shiny back image'/>
           <br>Shiny
           </div>
           
         </div>
 
         <div class='pokedetails'>
+
+          <div class='text-center'>
+            <h5>Type: </h5>
+            ${pokemon['type']} 
+          </div>
+
+          <br>
+
+          <div class='abilities text-center'>
+            <h5>Abilities: </h5>
+            ${pokemon['abilities']} 
+          </div>
+      
+          <br>
 
           <div class='stats text-center'>
             <h5>Base stats: </h5>
@@ -62,12 +74,9 @@ $(document).ready(function () {
 
           <br>
 
-          <div class='abilities text-center'>
-            <h5>Abilities: <br></h5>
-            ${pokemon['abilities']} 
-          </div>
-          <br>
-          <div class='text-center' id='pokechart'>
+          <div class='container-fluid row'>
+            <div class='col-lg-8 col-sm-12 mx-auto' id='pokechart'>
+            </div>
           </div>
 
           <br>
@@ -87,7 +96,7 @@ $(document).ready(function () {
         ['Speed', parseFloat(`${pokemon['speed']}`)],
         ['HP', parseFloat(`${pokemon['hp']}`)]
       ]
-      
+
       google.charts.setOnLoadCallback(function () { drawChart(dataArray) });
 
     });
@@ -100,6 +109,8 @@ $(document).ready(function () {
       title: 'Pokemon Stats',
       backgroundColor: { fill: 'none' },
       chartArea: { left: 50, top: 50, width: '100%', height: '100%' },
+      bars: 'horizontal',
+      colors: 'orange',
     };
     var pokestats = new google.charts.Bar(document.getElementById('pokechart'));
     pokestats.draw(chartData, options);
