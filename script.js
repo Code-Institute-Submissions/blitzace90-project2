@@ -124,7 +124,7 @@ $(document).ready(function(){
           `<a href = "index2.html">
           <div class='card' id="${pokemon['name']}">
           ${pokemon['id']}. ${pokemon['name']}
-          </br>
+          <br>
           <img src="${pokemon['image']}"/>
           </div>
           </a>`
