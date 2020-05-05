@@ -14,39 +14,42 @@
     </head>
 
 <body>
-    <div class="bg2 container-fluid responsive">
+    <div class="bg2 container-fluid">
         <br>
         <!--Title-->
-        <img class="logo" src="pokemonimage/pokemon-logo.png">
-        <br>
-
-        <div class="container pokebox">
-        <div class="container" id="poke-container-2">
-            <!--pokemon results-->
-        </div>
-
         <div class="container-fluid text-center">
-            <button id="returnbtn" class="button">
-                Return
-                <script>
-                    document.getElementById("returnbtn").onclick = function () {
-                    location.href = "index.html";
-                    };
-                </script>
-            </button>
+            <img class="logo" src="pokemonimage/pokemon-logo.png" alt="pokemon logo">
         </div>
-        </div>
+        <br>
+        
+        <div class="container-fluid pokebox">
+            <div class="container-fluid" id="poke-container-2">
+                <!--pokemon results-->
+            </div>
 
+            <div class="container-fluid text-center">
+                <button id="returnbtn" class="button">
+                    Return to previous
+                    <script>
+                        document.getElementById("returnbtn").onclick = function () {
+                        location.href = "index.html";
+                        };
+                    </script>
+                </button>
+            </div>
+            <br>
+        </div>
+        <br>
+        <br>
+        <br>
     </div>
     
     <footer class="page-footer font-small bg-white">
-
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2020 Copyright:
           <a href="">PokeGuide</a>
         </div>
         <!-- Copyright -->
-      
     </footer>
 
     <script src="script2.js"></script>
