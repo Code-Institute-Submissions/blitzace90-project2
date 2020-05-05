@@ -9,15 +9,15 @@
 }
 
 .logo{
-    width: 200px;
-    display: block;
+    width: 180px;
+    height: 100%;
     margin: 0 auto;
 }
 
 .pokeball1{
-    height: 40px;
-    width: 40px;
-    justify-content: flex-start;
+    height: 100%;
+    width: 30px;
+    justify-content: flex-end;
 }
 
 .types{
@@ -27,6 +27,11 @@
 
 .type{
     border: solid;
+}
+
+.symbol {
+    width: 30px;
+    height: 30px;
 }
 
 .poketype {
@@ -120,7 +125,7 @@
 /*Regions*/
 
 .regions{
-    background-color: cyan;
+    background-color: rgb(254, 255, 218);
     padding: 20px;
 }
 
@@ -140,8 +145,28 @@
     color: rgb(0, 0, 0);
 }
 
-.pokeregion {
-    background-color: #ffffff; border-top-color: lighten(#ffffff,15%); border-bottom-color: darken(#ffffff,15%);
+.kanto {
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);;
+}
+
+.johto {
+    background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+}
+
+.hoenn {
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+}
+
+.sinnoh {
+    background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+}
+
+.unova {
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+}
+
+.kalos {
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
 }
 
 /*Cards*/
@@ -157,12 +182,15 @@
     object-fit: contain;
 }
 
+.pokeCard a:hover{text-decoration:none;}
+
 .card:hover {
     -ms-transform: scale(1.5); /* IE 9 */
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.5);
     transition-delay: 0.05s;
     z-index: 2;
+    background-color: rgb(255, 177, 167);
 }
 
 #poke-container {
@@ -186,7 +214,7 @@
 
 .pokeimage2 {
     object-fit: contain;
-    width: 180px;
+    width: 50%;
     padding: 5px;
 }
 
@@ -202,5 +230,30 @@
 
 .pokebox {
     background-color: cyan;
+    height: 80%;
+    width: 80%;
+}
+
+#pokechart {
+    position: center;
+}
+
+
+/*scroll to top button*/
+
+#celebi {
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 20px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: auto; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 15px; /* Increase font size */
+    text-align: center;
+    height: 50px;
+    width: 50px;
 }
 
