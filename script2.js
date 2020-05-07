@@ -46,7 +46,7 @@ $(document).ready(function () {
           
         </div>
 
-        <div class='pokedetails'>
+        <div class='pokedetails container-fluid'>
 
           <div class='text-center'>
             <h5>Type: </h5>
@@ -75,7 +75,7 @@ $(document).ready(function () {
           <br>
 
           <div class='container-fluid row'>
-            <div class='col-lg-8 col-sm-12 mx-auto' id='pokechart'>
+            <div class='mx-auto' id='pokechart'>
             </div>
           </div>
 
