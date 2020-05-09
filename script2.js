@@ -34,55 +34,59 @@ $(document).ready(function () {
 
         <div class='container-fluid text-center row'>
           
-          <div class='col-lg-5'><img class='pokeimage2' src="${pokemon['image']}" alt='default front image'/><img class='pokeimage2' src="${pokemon['image2']}" alt='default back image'/>
+          <div class='col-xl-5 col-lg-5 col-md-12 col-sm-12'><img class='pokeimage2' src="${pokemon['image']}" alt='default front image'/><img class='pokeimage2' src="${pokemon['image2']}" alt='default back image'/>
           <br>Default
           </div>
           
-          <div class='col-lg-2'></div>
+          <div class='col-xl-2 col-lg-2 col-md-12 col-sm-12'></div>
 
-          <div class='col-lg-5'><img class='pokeimage2' src="${pokemon['image3']}" alt='shiny front image'/><img class='pokeimage2' src="${pokemon['image4']}" alt='shiny back image'/>
+          <div class='col-xl-5 col-lg-5 col-md-12 col-sm-12'><img class='pokeimage2' src="${pokemon['image3']}" alt='shiny front image'/><img class='pokeimage2' src="${pokemon['image4']}" alt='shiny back image'/>
           <br>Shiny
           </div>
           
         </div>
 
+        <br>
+
         <div class='pokedetails container-fluid'>
 
-          <div class='text-center'>
-            <h5>Type: </h5>
-            ${pokemon['type']} 
-          </div>
+        <br>
 
-          <br>
+          <div class='container-fluid row'>
+            <div class='types2 text-center col-xl-6 col-lg-6 col-md-12 col-sm-12'>
+              <h5>Type: </h5>
+              ${pokemon['type']} 
+            </div>
 
-          <div class='abilities text-center'>
-            <h5>Abilities: </h5>
-            ${pokemon['abilities']} 
-          </div>
-      
-          <br>
-
-          <div class='stats text-center'>
-            <h5>Base stats: </h5>
-            Attack: ${pokemon['attack']} <br>
-            Defense: ${pokemon['defense']} <br>
-            Special Att: ${pokemon['spattack']} <br>
-            Special Def: ${pokemon['spdefense']} <br>
-            Speed: ${pokemon['speed']} <br>
-            HP: ${pokemon['hp']} 
+            <div class='abilities text-center col-xl-6 col-lg-6 col-md-12 col-sm-12'>
+              <h5>Abilities: </h5>
+              ${pokemon['abilities']} 
+            </div>
           </div>
 
           <br>
 
           <div class='container-fluid row'>
-            <div class='mx-auto' id='pokechart'>
+            <div class='stats text-center col-xl-6 col-lg-6 col-md-12 col-sm-12'>
+              <h5>Base stats: </h5>
+              Attack: ${pokemon['attack']} <br>
+              Defense: ${pokemon['defense']} <br>
+              Special Att: ${pokemon['spattack']} <br>
+              Special Def: ${pokemon['spdefense']} <br>
+              Speed: ${pokemon['speed']} <br>
+              HP: ${pokemon['hp']} 
+            </div>
+
+            <div class='text-center col-xl-6 col-lg-6 d-none d-lg-block d-xl-block'>
+              <div id='pokechart'>
+              </div>
             </div>
           </div>
 
           <br>
 
         </div>
-
+        <br>
       </div>`
       );
     }).then(data => {
