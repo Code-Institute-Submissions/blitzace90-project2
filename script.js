@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  for (let j=1;j<723;j++){
+  for (let j=1;j<722;j++){
     $('#poke-container').append(`<div id="pokemon${j}" class="pokeCard"></div>`)
   }
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
     $('.pokeCard').each(function(){
       $(this).empty()
     })
-    for (let j=1;j<723;j++){
+    for (let j=1;j<722;j++){
       let url = `https://pokeapi.co/api/v2/pokemon/${j}`;
       fetch(url)
       .then( res => {
