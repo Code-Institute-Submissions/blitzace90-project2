@@ -27,6 +27,9 @@ $(document).ready(function(){
 
   //Find Button clicked
   $("#search-btn").click(function(){
+
+    $('#countResults').html(`<a id='pokeCount'>0</a> pokemon found`)
+
     var radioValue=''
     var name = $('#inputPokemon').val()
       //If type radio is selected, send 2 arguments (search type (type) and radio value to function)
@@ -61,6 +64,8 @@ $(document).ready(function(){
         pokemon['id'] = data.id;
         pokemon['image'] = data.sprites['front_default'];
         pokemon['type'] = data.types.map((type) => type.type.name);
+
+        var count = 0
 
         //If type is selected, append if the pokemon type array has selected type
         if(searchType=='type'){
@@ -129,14 +134,16 @@ $(document).ready(function(){
           </div>
           </a>`
         )
+        $('#pokeCount').text(parseInt($('#pokeCount').text())+1)
       } 
   }
 
   //clear button
   $("#clear-btn").click(function(){
     $('.pokeCard').html("");
-    $('#inputPokemon').val("")
-    $('.radio-btn').prop("checked",false)
+    $('#inputPokemon').val("");
+    $('.radio-btn').prop("checked",false);
+    $('#countResults').html("");
   });
 
 //Caps first letter of pokemon name
