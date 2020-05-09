@@ -215,7 +215,7 @@
         <!--Textbox-->
         <div class="container">
             <div class="container-fluid text-center">
-                <input class="text-center" type="text" name="pokemon" id="inputPokemon" placeholder="Enter pokemon name or ID no." >
+                <input type="text" class="text-center" name="pokemon" id="inputPokemon" placeholder="Enter pokemon name or ID no." >
             </div>
         </div>
 
@@ -234,6 +234,9 @@
         <div class="container-fluid" id="#top">
             <div class="text-center">
                 <h2>Search List:</h2>
+                <br>
+                <div class='container-fluid text-center' id='countResults'>
+                </div>
                 <br>
             </div>
             <div id="poke-container" class="container-fluid text-center row">
@@ -255,6 +258,7 @@
 			        $("#celebi").fadeOut();
 		        }
 	        });
+            
         </script>
 
         <br>
@@ -276,4 +280,3 @@
         <script src="script.js"></script>
     </body>
 </html>
-
