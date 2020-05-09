@@ -34,6 +34,7 @@ When the user first arrives at the website:
 - There is a small pokemon at the bottom right to allow scroll to top function
 - Click into the pokemon to move to another page, with more images and details about the pokemon
 - The pokemon page on another html has a return button to return to the search page
+- In small devices, the bar chart will disappear
 
 
 **Features left to implement**
