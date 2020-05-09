@@ -65,8 +65,6 @@ $(document).ready(function(){
         pokemon['image'] = data.sprites['front_default'];
         pokemon['type'] = data.types.map((type) => type.type.name);
 
-        var count = 0
-
         //If type is selected, append if the pokemon type array has selected type
         if(searchType=='type'){
           for (let t of pokemon['type']){
