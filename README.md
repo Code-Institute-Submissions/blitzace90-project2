@@ -96,13 +96,13 @@ The site is hosted using Github pages and deployed from the master branch. Code 
 
 ### **Credits**
 
-- Pokemon icons [here](https://www.deviantart.com/maskadra42/gallery/42913969/pokecards-icons-type)  
-- Button CSS [here](https://www.bestcssbuttongenerator.com/#/22)
-- Pokemon images [here](http://www.pngmart.com/image/57509)
-- Pokemon types CSS [here](https://codepen.io/jkneb/pen/AXGaWk)
-- Colourful gradients CSS [here](https://webgradients.com/)
-- Pokemon logo and pokeball images [here](https://www.freeiconspng.com/search.html?q=pokemon+&tip=icon)
-- Pokeapi [here](https://pokeapi.co/) 
+- Pokemon icons [click here](https://www.deviantart.com/maskadra42/gallery/42913969/pokecards-icons-type)  
+- Button CSS [click here](https://www.bestcssbuttongenerator.com/#/22)
+- Pokemon images [click here](http://www.pngmart.com/image/57509)
+- Pokemon types CSS [click here](https://codepen.io/jkneb/pen/AXGaWk)
+- Colourful gradients CSS [click here](https://webgradients.com/)
+- Pokemon logo and pokeball images [click here](https://www.freeiconspng.com/search.html?q=pokemon+&tip=icon)
+- Pokeapi [click here](https://pokeapi.co/) 
 
 
 
