@@ -1,6 +1,6 @@
 # Pokemon Guide website
 ## Project 2: Interactive Front-End Development - Code Institute
-![mockup image](pokemonimage/mockup.png)
+![mockup image](pokemonimage/mockup.PNG)
 ### **Introduction**
 Pokemon started with the initial 151 different species in the Kanto region. Over the many years garnering huge popularity, now there are at least 6 regions and over 700 pokemon. This site has the breakdown of pokmon by the 18 different types, as well as the 6 different regions. Feel free to navigate around to see the first few familiar pokemon, and find out more about the newer ones. 
 The link is as follows: [click here](https://blitzace90.github.io/project2/)  
