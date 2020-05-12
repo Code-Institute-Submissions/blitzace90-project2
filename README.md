@@ -1,5 +1,6 @@
 # Pokemon Guide website
 ## Project 2: Interactive Front-End Development - Code Institute
+![mockup image](pokemonimage/mockup.png)
 ### **Introduction**
 Pokemon started with the initial 151 different species in the Kanto region. Over the many years garnering huge popularity, now there are at least 6 regions and over 700 pokemon. This site has the breakdown of pokmon by the 18 different types, as well as the 6 different regions. Feel free to navigate around to see the first few familiar pokemon, and find out more about the newer ones. 
 The link is as follows: [click here](https://blitzace90.github.io/project2/)  
@@ -78,6 +79,7 @@ Basic checks include:
 
 Bugs found:
 - The symbols for types does not fit quite nicely in ipad pro "portrait" view
+- Some newer pokemon do not have back images as the sprites were not available in the api
 
 ***
 
@@ -96,10 +98,12 @@ The site is hosted using Github pages and deployed from the master branch. Code 
 
 ### **Credits**
 
-- Pokemon icons [click here](https://www.deviantart.com/maskadra42/gallery/42913969/pokecards-icons-type)  
+The following are links used for this project. To reach the respective links, click onto "click here."
+
+- Pokemon icons and symbols for types [click here](https://www.deviantart.com/maskadra42/gallery/42913969/pokecards-icons-type)  
 - Button CSS [click here](https://www.bestcssbuttongenerator.com/#/22)
 - Pokemon images [click here](http://www.pngmart.com/image/57509)
-- Pokemon types CSS [click here](https://codepen.io/jkneb/pen/AXGaWk)
+- Pokemon types CSS font and background [click here](https://codepen.io/jkneb/pen/AXGaWk)
 - Colourful gradients CSS [click here](https://webgradients.com/)
 - Pokemon logo and pokeball images [click here](https://www.freeiconspng.com/search.html?q=pokemon+&tip=icon)
 - Pokeapi [click here](https://pokeapi.co/) 
