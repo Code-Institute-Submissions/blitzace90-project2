@@ -243,9 +243,18 @@
 
 /*pokemon name*/
 #indivpoke {
-    padding: 30px;
-    font-size: 150%;
+    padding-top: 30px;
+    padding-left: 0px;
+    font-size: 100%;
     color: rgb(0, 0, 0);
+}
+
+.container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /*pokemon images api*/
