@@ -252,7 +252,8 @@
 .pokeimage2 {
     object-fit: contain;
     width: 50%;
-    padding: 5px;
+    padding: 20px;
+    width: 170px;
 }
 
 /*Background image for index2*/
